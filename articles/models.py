@@ -10,7 +10,7 @@ class Article(models.Model):
     help_text="qisqa matn kiriting")
     body = RichTextField(help_text="Yangilik to`liq matnini kiriting")
     photo = models.ImageField(upload_to='images/', blank=True, 
-    help_text="Rasmni yuklang")
+    help_text="Rasmni yuklang", on_delete=models.CASCADE,)
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
         get_user_model(),
