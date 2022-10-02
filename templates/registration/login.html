@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Kirish{% endblock title %}
+
+{% block content %}
+<div class="conteiner-fluid" style="width: 70%; margin:auto;">
+    <h2>Saytga kirish</h2>
+    <form method="post">{% csrf_token %}
+        <!-- crispyni ishlatish ucun form.as_p ni form|crispy deb o`zgartiramiz -->
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Kirish</button>
+        <a href="{% url 'home' %}" class="btn btn-outline-danger" role="button">Parolni tiklash</a>
+    </form>
+</div>
+{% endblock content %}

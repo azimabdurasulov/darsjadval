@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}4-kurslar dars jadvali{% endblock title %}
+{% block content %}
+    <!-- <div class="card-group" style="width: 90%; margin: auto;" > -->
+     {% for turtinchi in object_list %}
+          <div class="card" style="margin: auto;  width: 70%; margin-bottom: 1%;">
+               <div class="card-header">
+                    <span class="font-weight-bold" style="width: 100%;" ><h2  style="margin: auto; text-align:center">{{ turtinchi.title }}</h2></span>
+               </div>
+               {% if turtinchi.photo %}
+                    <img src="{{ turtinchi.photo.url }}" alt="{{ turtinchi.title }}" class="card-img-top">
+               {% endif %}
+               <div class="card-body">
+                <p class="card-text">{{ turtinchi.body | safe }}</p>    
+               </div>
+               {% if user.is_superuser %}
+                <a href="{% url 'turtinchi_edit' turtinchi.pk %}" class="btn btn-primary" style="margin-bottom: 1%;">Tahrirlash</a> 
+                <a href="{% url 'turtinchi_delete' turtinchi.pk %}" class="btn btn-danger">O`chirish</a> 
+                {% endif %}
+               <div class="card-footer text-left text-muted">
+                    <span class="text-muted">muallif {{ turtinchi.author | title}} . {{ turtinchi.date }}</span>
+               </div>
+          </div>
+     {% endfor %}
+     <!-- </div> -->
+          
+{% endblock content %}

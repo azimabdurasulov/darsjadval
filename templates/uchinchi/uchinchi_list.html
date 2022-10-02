@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}3-kurslar dars jadvali{% endblock title %}
+{% block content %}
+    <!-- <div class="card-group" style="width: 90%; margin: auto;" > -->
+     {% for uchinchi in object_list %}
+          <div class="card" style="margin: auto;  width: 70%; margin-bottom: 1%;">
+               <div class="card-header">
+                    <span class="font-weight-bold" style="width: 100%;" ><h2  style="margin: auto; text-align:center">{{ uchinchi.title }}</h2></span>
+               </div>
+               {% if uchinchi.photo %}
+                    <img src="{{ uchinchi.photo.url }}" alt="{{ uchinchi.title }}" class="card-img-top">
+               {% endif %}
+               <div class="card-body">
+                <p class="card-text">{{ uchinchi.body | safe }}</p>    
+               </div>
+               {% if user.is_superuser %}
+                    <a href="{% url 'uchinchi_edit' uchinchi.pk %}" class="btn btn-primary" style="margin-bottom: 1%;">Tahrirlash</a> 
+                    <a href="{% url 'uchinchi_delete' uchinchi.pk %}" class="btn btn-danger">O`chirish</a> 
+               {% endif %}
+               <div class="card-footer text-left text-muted">
+                    <span class="text-muted">muallif {{ uchinchi.author | title}} . {{ uchinchi.date }}</span>
+               </div>
+          </div>
+     {% endfor %}
+     <!-- </div> -->
+          
+{% endblock content %}

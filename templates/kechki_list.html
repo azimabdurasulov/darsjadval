@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Kechkilar dars jadvali{% endblock title %}
+{% block content %}
+    <!-- <div class="card-group" style="width: 90%; margin: auto;" > -->
+     {% for kechki in object_list %}
+          <div class="card" style="margin: auto;  width: 70%; margin-bottom: 1%;">
+               <div class="card-header">
+                    <span class="font-weight-bold" style="width: 100%;" ><h2  style="margin: auto; text-align:center">{{ kechki.title }}</h2></span>
+               </div>
+               {% if kechki.photo %}
+                    <img src="{{ kechki.photo.url }}" alt=" {{ kechki.title }}" class="card-img-top">
+               {% endif %}
+               <div class="card-body">
+                <p class="card-text">{{ kechki.body | safe }}</p>    
+               </div>
+               {% if user.is_superuser %}
+                    <a href="{% url 'kechki_edit' kechki.pk %}" class="btn btn-primary" style="margin-bottom: 1%;">Tahrirlash</a> 
+                    <a href="{% url 'kechki_delete' kechki.pk %}" class="btn btn-danger">O`chirish</a> 
+               {% endif %}
+               <div class="card-footer text-left text-muted">
+                    <span class="text-muted">muallif {{ kechki.author | title}} . {{ kechki.date }}</span>
+               </div>
+          </div>
+     {% endfor %}
+     <!-- </div> -->
+          
+{% endblock content %}

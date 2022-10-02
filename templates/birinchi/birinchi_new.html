@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}1-kurslarga jadval qo`shish{% endblock title %}
+
+{% block content %}
+<div class="conteiner-fluid" style="width: 70%; margin:auto;">
+    <h2>1-kurslarga Yangi jadval qo`shish</h2>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <!-- crispyni ishlatish ucun form.as_p ni form|crispy deb o`zgartiramiz -->
+        {{ form.media }}
+        {{ form|crispy }}
+        <button type="submit" class="btn  btn-success btn-lg btn-block">Saqlash</button>
+    </form>
+    <p></p>
+</div>
+{% endblock content %}

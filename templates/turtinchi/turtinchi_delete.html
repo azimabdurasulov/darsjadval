@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}O`chirish{% endblock title %}
+
+{% block content %}
+<div class="conteiner-fluid" style="width: 70%; margin:auto;">
+    <h2>O`chirish</h2>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <!-- crispyni ishlatish ucun form.as_p ni form|crispy deb o`zgartiramiz -->
+        <p>"{{ turtinchi.title }}" ni o`chirishni hohlaysizmi?</p>
+        <button type="submit" class="btn btn-outline-danger">Ha</button>
+    </form>
+</div>
+{% endblock content %}

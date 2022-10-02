@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Bosh sahifa{% endblock title %}
+{% block content %}
+<div class="bgimg">
+    <h1>MATEMATIKA FAKULTETINING DARS JADVALI VA YANGILIKLAR</h1>
+
+    <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+            <div class="card" style="color: #000;" >
+                <img src="{% static 'logo/1.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">1-kurslar dars jadvali</h5>
+                    <p class="card-text">1-kurs talabalar uchun dars jadvali</p>
+                    <a href="{% url 'birinchi_list' %}" class="btn btn-success btn-block"
+                        style="color: #fff; text-decoration: none;">JADVALNI KO`RISH</a>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card" style="color: #000;">
+                <img src="{% static 'logo/2.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">2-kurslar dars jadvali</h5>
+                    <p class="card-text">2-kurs talabalar uchun dars jadvali</p>
+                    <a href="{% url 'ikkinchi_list' %}" class="btn btn-success btn-block"
+                        style="color: #fff; text-decoration: none;">JADVALNI KO`RISH</a>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card" style="color: #000;">
+                <img src="{% static 'logo/3.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">3-kurslar dars jadvali</h5>
+                    <p class="card-text">3-kurs talabalar uchun dars jadvali</p>
+                    <a href="{% url 'uchinchi_list' %}" class="btn btn-success btn-block"
+                        style="color: #fff; text-decoration: none;">JADVALNI KO`RISH</a>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card" style="color: #000;">
+                <img src="{% static 'logo/4.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">4-kurslar dars jadvali</h5>
+                    <p class="card-text">4-kurs talabalar uchun dars jadvali</p>
+                    <a href="{% url 'turtinchi_list' %}" class="btn btn-success btn-block"
+                        style="color: #fff; text-decoration: none;">JADVALNI KO`RISH</a>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card" style="color: #000;">
+                <img src="{% static 'logo/kechki.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Kechkilar dars jadvali</h5>
+                    <p class="card-text">Kechki ta'lim shaklida o`qiyotgan talabalar dars jadvali</p>
+                    <a href="{% url 'kechki_list' %}" class="btn btn-success btn-block"
+                        style="color: #fff; text-decoration: none;">JADVALNI KO`RISH</a>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card" style="color: #000;">
+                <img src="{% static 'logo/news.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Yangiliklar va e'lonlar</h5>
+                    <p class="card-text">Fakultet yangiliklari va e`lonlar bilan tanishishingiz mumkin</p>
+                    <a href="{% url 'article_list' %}" class="btn btn-success btn-block"
+                        style="color: #fff; text-decoration: none;">YANGILIKLARNI KO`RISH</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row row-cols-1 row-cols-md-2">
+    <div class="col mb-4">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+  </div> -->
+</div>
+{% endblock content %}
